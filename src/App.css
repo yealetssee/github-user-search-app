@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
-:root {
-  --color-background-body: #141d2f;
-  --color-background-main: #1e2a47;
-  --color-font: #ffffff;
+body {
+  --color-background-body: #f6f8ff;
+  --color-background-main: #fefefe;
+  --color-font: #4b6a9b;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-background-body: #f6f8ff;
-    --color-background-main: #fefefe;
-    --color-font: #4b6a9b;
+@media (prefers-color-scheme) {
+  body.dark {
+    --color-background-body: #141d2f;
+    --color-background-main: #1e2a47;
+    --color-font: #ffffff;
   }
 }
 * {
@@ -49,6 +49,11 @@ main {
   align-items: center;
   justify-content: center;
   gap: 1.6rem;
+}
+.color-mode span {
+  font-size: 1.3rem;
+  color: var(--color-font);
+  letter-spacing: 0.25rem;
 }
 
 .submain .userSearch {
@@ -299,7 +304,18 @@ svg {
   main {
     width: 73rem;
   }
+  .inputDiv input:hover {
+    cursor: pointer;
+  }
   .inputDiv button {
     margin-left: 25rem;
+  }
+  .head .color-mode:hover {
+    cursor: pointer;
+  }
+
+  .inputDiv button:hover {
+    background-color: #60abff;
+    cursor: pointer;
   }
 }
