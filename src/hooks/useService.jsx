@@ -11,7 +11,6 @@ const useService = () => {
         `https://api.github.com/users/${searchInput}`,
       );
       setSearchResult(response.data);
-      console.log(response.data);
     } catch (error) {
       console.error(error);
     }

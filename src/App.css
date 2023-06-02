@@ -1,6 +1,18 @@
-@import url(./variables.css);
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
+:root {
+  --color-background-body: #141d2f;
+  --color-background-main: #1e2a47;
+  --color-font: #ffffff;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-background-body: #f6f8ff;
+    --color-background-main: #fefefe;
+    --color-font: #4b6a9b;
+  }
+}
 * {
   margin: 0;
   box-sizing: border-box;
@@ -31,6 +43,12 @@ main {
   font-weight: 700;
   color: var(--color-font);
   line-height: 3.85rem;
+}
+.head .color-mode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
 }
 
 .submain .userSearch {
@@ -127,10 +145,11 @@ main {
 .content-right p a {
   color: #0079ff;
   text-decoration: none;
+  font-size: 1.3rem;
 }
 
 .content-right p:last-child {
-  color: hsl(0, 0%, 100%, 0.8);
+  color: var(--color-font);
   font-size: 1.3rem;
   font-weight: 400;
   line-height: 1.9rem;
@@ -176,4 +195,111 @@ main {
 
 .user-info {
   margin-top: 2.5rem;
+}
+.user-info div + div {
+  margin-top: 1.6rem;
+}
+
+.user-info div {
+  display: flex;
+  color: red;
+
+  align-items: center;
+  gap: 1.9rem;
+}
+
+.user-info div span:last-child {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--color-font);
+}
+
+svg {
+  fill: var(--color-font);
+}
+
+@media (min-width: 768px) {
+  main {
+    width: 57.3rem;
+  }
+
+  .submain .userSearch {
+    height: 6.9rem;
+  }
+  .inputDiv {
+    gap: 2.6rem;
+    margin-left: 3.2rem;
+  }
+  .inputDiv input {
+    font-size: 1.8rem;
+    width: 25.4rem;
+  }
+  .inputDiv button {
+    font-size: 1.6rem;
+    height: 5rem;
+    width: 10.6rem;
+    margin-left: 10rem;
+  }
+
+  .inputDiv img {
+    height: 2.1rem;
+  }
+
+  .submain .user-card {
+    padding: 4rem;
+  }
+
+  .user-card_main {
+    gap: 4.1rem;
+  }
+  .user-card_main .user-photo-left {
+    width: 11.7rem;
+    height: 11.7rem;
+  }
+
+  .content-right h1 {
+    font-size: 2.6rem;
+  }
+  .content-right p a {
+    font-size: 1.6rem;
+  }
+  .content-right p:last-child {
+    font-size: 1.5rem;
+  }
+  .user-bio p {
+    font-size: 1.5rem;
+  }
+  .user-stats {
+    margin-top: 3.2rem;
+  }
+  .user-stats div {
+    font-size: 1.3rem;
+  }
+  .user-stats div > p:last-child {
+    font-size: 2.2rem;
+  }
+
+  .user-info {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2rem;
+    column-gap: 2rem;
+  }
+  .user-info div + div {
+    margin-top: 0;
+  }
+  .user-info div span:last-child {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  main {
+    width: 73rem;
+  }
+  .inputDiv button {
+    margin-left: 25rem;
+  }
 }
