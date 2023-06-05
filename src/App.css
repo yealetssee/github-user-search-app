@@ -6,7 +6,7 @@ body {
   --color-font: #4b6a9b;
 }
 
-@media (prefers-color-scheme) {
+@media (prefers-color-scheme: dark) {
   body.dark {
     --color-background-body: #141d2f;
     --color-background-main: #1e2a47;
