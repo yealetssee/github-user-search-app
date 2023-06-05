@@ -4,6 +4,7 @@ import { useState } from "react";
 const useService = () => {
   const [searchInput, setSearchInput] = useState("");
   const [searchResult, setSearchResult] = useState({});
+  const [error, setError] = useState(false);
 
   const fetchUserData = async () => {
     try {
@@ -11,8 +12,10 @@ const useService = () => {
         `https://api.github.com/users/${searchInput}`,
       );
       setSearchResult(response.data);
+      setError(false);
     } catch (error) {
       console.error(error);
+      setError(true);
     }
   };
 
@@ -41,6 +44,7 @@ const useService = () => {
   return {
     searchInput,
     searchResult,
+    error,
     searchClickHandler,
     handleInputChange,
     searchEnterHandler,

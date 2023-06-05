@@ -12,6 +12,7 @@ function App() {
   const {
     searchInput,
     searchResult,
+    error,
     searchClickHandler,
     handleInputChange,
     searchEnterHandler,
@@ -65,9 +66,14 @@ function App() {
               onChange={handleInputChange}
               onKeyDown={searchEnterHandler}
             />
-            <button className="btn-search" onClick={searchClickHandler}>
-              Search
-            </button>
+            <div className="button">
+              {error && window.innerWidth >= 1440 && (
+                <span className="error">No Result</span>
+              )}
+              <button className="btn-search" onClick={searchClickHandler}>
+                Search
+              </button>
+            </div>
           </div>
         </div>
         {JSON.stringify(searchResult) == "{}" ? (
