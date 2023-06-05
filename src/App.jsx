@@ -18,6 +18,20 @@ function App() {
   } = useService();
 
   const [isDark, setIsDark] = useState(true);
+  useEffect(() => {
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    setIsDark(prefersDarkScheme.matches);
+
+    const handleColorSchemeChange = (event) => {
+      setIsDark(event.matches);
+    };
+
+    prefersDarkScheme.addEventListener("change", handleColorSchemeChange);
+
+    return () => {
+      prefersDarkScheme.removeEventListener("change", handleColorSchemeChange);
+    };
+  }, []);
 
   useEffect(() => {
     if (isDark) {
